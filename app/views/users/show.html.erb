@@ -54,17 +54,19 @@
         <tbody>
           <% @books.each do |book| %>
             <tr>
-              <th>
+              <td>
                 <%= link_to book_path(book.id) do %>
-                  <%= image_tag book.get_image %>
+                  <%= image_tag book.get_image %><br>
                 <% end %>
-              </th>
-              <th>
-                <%= link_to book.title %>
-              </th>
-              <th>
+              </td>
+              <td>
+                <%= link_to book_path(book.id) do %>
+                  <%= book.title %>
+                <% end %>
+              </td>
+              <td>
                 <%= book.body %>
-              </th>
+              </td>
             </tr>
           <% end %>
         </tbody>
