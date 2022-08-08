@@ -11,6 +11,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    @Book = Book.new
   end
 
   def show
