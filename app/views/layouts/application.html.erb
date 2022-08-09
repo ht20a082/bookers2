@@ -35,7 +35,7 @@
                   <% end %>
                 <% end %>
               </li>
-              <% if current_page?(root_path) %>
+               <% if !user_signed_in? %>
                 <li class="nav-item">
                     <%= link_to about_path, class: 'nav-link text-light' do %>
                       <i class="fas fa-link"></i>
@@ -43,6 +43,7 @@
                     <% end %>
                 </li>
               <% else %>
+                <% if !current_page?(about_path) %>
                 <li class="nav-item">
                     <%= link_to users_path, class: 'nav-link text-light' do %>
                       <i class="fas fa-users"></i>
@@ -55,6 +56,7 @@
                       Books
                     <% end %>
                 </li>
+                <% end %>
               <% end %>
               <% if user_signed_in? %>
                 <li class="nav-item">
