@@ -21,7 +21,7 @@
         </tbody>
       </table>
       <div class="row">
-        <%= link_to edit_user_path(current_user.id), class: "btn btn-outline-secondary btn-block" do %>
+        <%= link_to edit_user_path(@user.id), class: "btn btn-outline-secondary btn-block" do %>
           <i class="fas fa-user-cog"></i>
         <% end %>
       </div>
@@ -55,7 +55,7 @@
           <% @books.each do |book| %>
             <tr>
               <td>
-                <%= link_to book_path(book.id) do %>
+                <%= link_to user_path(@user.id) do %>
                   <%= image_tag book.get_image %><br>
                 <% end %>
               </td>
